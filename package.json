@@ -1,0 +1,25 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PapaCode79/Team_Profile_Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PapaCode79/Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/PapaCode79/Team_Profile_Generator#readme",
+  "dependencies": {
+    "jest": "^28.1.2"
+  }
+}
