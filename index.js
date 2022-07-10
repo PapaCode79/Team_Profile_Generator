@@ -5,6 +5,8 @@ const Engineer = require('./lib/Engineer');
 
 const fs = require('fs');
 
+const createPage  = require('./template')
+
 let employees =[]
 
 inquirer.prompt([
@@ -46,8 +48,8 @@ const ask = () => {
         {
             type: "list",
             name: "role",
-            choices: ["intern", "engineer"],
-            message: "which other employee you want to generate?"
+            choices: ["intern", "engineer", "create page"],
+            message: "which other employee you want to generate or do you want to create page?"
         }
     ).then(
         answer => {
@@ -57,8 +59,8 @@ const ask = () => {
                         return generateIntern();
                     case "engineer":
                         return generateEngineer();
-                    default:
-                        return
+                    case "create page":
+                        return createPage(employees);
                     
             }
         }}
@@ -94,14 +96,15 @@ inquirer.prompt([
         const { name, id, email, school } = answers;
         const newEmployee = new Intern(name, id, email, school);
         employees.push(newEmployee);
-        console.log(employees)
+        console.log(employees);
+        ask()
         
 
     }
 )
 }
 
-function generateEmployee(){
+function generateEngineer(){
 inquirer.prompt([
     {
     type: 'input',
@@ -131,7 +134,7 @@ inquirer.prompt([
         const newEmployee = new Engineer(name, id, email, github);
         employees.push(newEmployee);
         console.log(employees)
-        
+        ask()
 
     }
 )
